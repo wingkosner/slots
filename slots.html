@@ -1,0 +1,45 @@
+<head>
+  <title>pick a slot</title>
+</head>
+
+<body>
+	
+	<div id="container">
+		{{loginButtons}}
+  		{{> hello}}
+	</div>
+
+</body>
+
+
+
+<template name="hello">
+  <h1>Pick a slot ;)</h1>
+
+	<table class="schedule">
+
+		<tr>
+			<td></td>
+			{{#each days}}
+				<td>{{day}}</td>
+			{{/each}}
+		</tr>
+
+		{{#each hours}}
+		
+		<tr data-hour="{{hour}}">
+			<td>{{hour}}:00</td>
+			{{#each days}}
+				<td class="slot {{hasSlot day ../hour}}" data-day="{{day}}">
+					{{user day ../hour}}
+				</td>
+			{{/each}}
+		</tr>
+
+		{{/each}}
+
+	</table>
+
+</template>
+
+

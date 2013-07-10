@@ -1,0 +1,26 @@
+/* CSS declarations go here */
+.schedule{
+
+	width: 500px;
+}
+
+.schedule td{
+	border: 1px solid gray;
+}
+
+.schedule td.slot{
+	color: white;
+}
+
+.schedule td.slot:hover{
+	background: gray;
+	cursor: pointer;
+}
+
+.schedule td.taken{
+	background: gray;
+}
+
+.schedule td.me{
+	background: blue;
+}
