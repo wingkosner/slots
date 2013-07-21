@@ -11,7 +11,7 @@ if (Meteor.isClient) {
   });
 
   Template.hello.greeting = function () {
-    return "Welcome to blob.";
+    return "Welcome to the slot picker.";
   };
 
   Template.hello.slots = function(){
@@ -21,7 +21,7 @@ if (Meteor.isClient) {
 
   Template.hello.user = function(day, hour){
 
-    if(Meteor.user() && Meteor.user().emails && Meteor.user().emails[0].address == 'sam@bigroomstudios.com'){
+    if(Meteor.user() && Meteor.user().emails && Meteor.user().emails[0].address == 'deborah@deborahwingsproul.com'){
 
       var slot = Slots.findOne({day: day, hour: hour});
 
@@ -63,12 +63,12 @@ if (Meteor.isClient) {
   Template.hello.days = function(){
 
     var days = new Array(
-      {day:1}, 
-      {day:2},
-      {day:3},
-      {day:4},
-      {day:5},
-      {day:6}
+      {day:'Tuesday, July 30th'}, 
+      {day:'Wednesday, July 31st'},
+      {day:'Thursday, August 1'},
+      {day:'Friday, August 2'},
+      {day:'Saturday, August 3'},
+      {day:'Sunday, August 4'}
     );
 
     return days;
@@ -77,11 +77,11 @@ if (Meteor.isClient) {
   Template.hello.hours = function(){
 
     var hours = new Array(
-      {hour:5}, 
-      {hour:6},
-      {hour:7},
-      {hour:8},
-      {hour:9}
+      {hour:8}, 
+      {hour:9},
+      {hour:10},
+      {hour:11},
+      {hour:12}
     );
 
     return hours;
@@ -113,7 +113,7 @@ if (Meteor.isClient) {
         
       }else{
 
-        alert('please log in');
+        alert('Sorry, you need to log in to pick a time slot');
 
       }
     }
